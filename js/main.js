@@ -42,9 +42,16 @@ $( document ).ready(function() {
 
         if ( event.which == 13 ){//right
             if (scroll_locked){
-                scroll_rolled=false;
+                if (scroll_rolled){
+                    scroll_rolled=false;
+                }else{
+                    scroll_rolled=true;
+                }
+
                 textShow=false;
+                
             }
+            
         }
         // Boundaries
         charX=charX+horzK;
@@ -197,8 +204,8 @@ $( document ).ready(function() {
         // context.drawImage(images["left_wing"], x, y+163);
         // context.drawImage(images["right_wing"], x+280, y+163);
 
-        drawEllipse(x + 80, y +100, 20, curEyeHeight); // Left Eye
-        drawEllipse(x + 150, y +100, 20, curEyeHeight); // Right Eye
+        drawEllipse(x + 75, y +95, 20, curEyeHeight); // Left Eye
+        drawEllipse(x + 145, y +95  , 20, curEyeHeight); // Right Eye
         
 
         drawWing(150,150,x+37,y+165,wingpos,0); //left
